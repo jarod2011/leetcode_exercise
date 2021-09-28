@@ -1,4 +1,4 @@
-package topic_one_two_sum
+package topic1_two_sum
 
 func twoSum(nums []int, target int) []int {
 	var cache = make(map[int]int)
@@ -6,7 +6,7 @@ func twoSum(nums []int, target int) []int {
 		if idx, ok := cache[v]; ok {
 			return []int{idx, k}
 		}
-		cache[target - v] = k
+		cache[target-v] = k
 	}
 	return []int{}
 }
