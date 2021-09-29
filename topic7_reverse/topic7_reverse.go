@@ -26,3 +26,25 @@ func reverseByConvertString(x int) int {
 	}
 	return int(-int32(rev))
 }
+
+func reverseByDelivery(x int) int {
+	var y, res, tmp int
+	flag := x >= 0
+	y = x
+	if !flag {
+		y = -y
+	}
+	for y >= 10 {
+		tmp = y % 10
+		res = res*10 + tmp
+		y = (y - tmp) / 10
+	}
+	res = res*10 + y
+	if !flag {
+		res = -res
+	}
+	if res > math.MaxInt32 || res < math.MinInt32 {
+		return 0
+	}
+	return res
+}
